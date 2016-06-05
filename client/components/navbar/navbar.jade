@@ -1,34 +1,24 @@
-div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarController')
-  div.container
-    div.navbar-header
-      button.navbar-toggle(type='button', ng-click='nav.isCollapsed = !nav.isCollapsed')
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand(href='/') ecomova
-
-    div#navbar-main.navbar-collapse.collapse(uib-collapse='nav.isCollapsed')
-      ul.nav.navbar-nav
-        li(ng-repeat='item in nav.menu', ui-sref-active='active')
-          a(ui-sref='{{item.state}}') {{item.title}}
-
-        li(ng-show='nav.isAdmin()', ui-sref-active='active')
-          a(ui-sref='admin') Admin
-
-      ul.nav.navbar-nav.navbar-right
-        li(ng-hide='nav.isLoggedIn()', ui-sref-active='active')
-          a(ui-sref='signup') Sign up
-
-        li(ng-hide='nav.isLoggedIn()', ui-sref-active='active')
-          a(ui-sref='login') Login
-
-        li(ng-show='nav.isLoggedIn()')
-          p.navbar-text Hello {{ nav.getCurrentUser().name }}
-
-        li(ng-show='nav.isLoggedIn()', ui-sref-active='active')
-          a(ui-sref='settings')
-            span.glyphicon.glyphicon-cog
-
-        li(ng-show='nav.isLoggedIn()')
-          a(ui-sref='logout') Logout
+md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-md')")
+  md-toolbar.md-tall.md-hue-2
+    span(flex='')
+    .md-toolbar-tools-bottom.inset(layout='column')
+      user-avatar
+      span
+      div {{ nav.getCurrentUser().name }}
+  md-list
+    md-item(ng-repeat='item in nav.menu')
+      a
+        md-item-content(md-ink-ripple='', layout='row', layout-align='start center')
+          .inset
+            ng-md-icon(icon='{{item.icon}}')
+          .inset
+            | {{item.title}}
+    md-divider
+    md-subheader Management
+    md-item(ng-repeat='item in nav.admin')
+      a
+        md-item-content(md-ink-ripple='', layout='row', layout-align='start center')
+          .inset
+            ng-md-icon(icon='{{item.icon}}')
+          .inset
+            | {{item.title}}
