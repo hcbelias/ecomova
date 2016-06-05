@@ -5,7 +5,7 @@ class NavbarController {
   menu = [
     {
       link : '',
-      title: 'Dashboard',
+      title: 'Carpool',
       icon: 'dashboard'
     },
     {
@@ -18,16 +18,12 @@ class NavbarController {
       title: 'Messages',
       icon: 'message'
     }
+
   ];
 
   admin = [
     {
       link : '',
-      title: 'Trash',
-      icon: 'delete'
-    },
-    {
-      link : 'showListBottomSheet($event)',
       title: 'Settings',
       icon: 'settings'
     }
@@ -40,7 +36,9 @@ class NavbarController {
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
+    this.$mdSidenav = $mdSidenav;
   }
+
 }
 
 angular.module('ecomovaApp')

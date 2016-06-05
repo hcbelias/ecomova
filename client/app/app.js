@@ -1,7 +1,7 @@
 'use strict';
 
 var en_I18N = {
-
+  management: 'Management'
 };
 
 angular.module('ecomovaApp.I18N',[]);

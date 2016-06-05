@@ -1,24 +1,25 @@
 md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-md')")
-  md-toolbar.md-tall.md-hue-2
+  md-toolbar.md-tall
     span(flex='')
     .md-toolbar-tools-bottom.inset(layout='column')
-      user-avatar
-      span
+      md-icon.md-avatar(md-svg-icon="avatars:svg-1")
+      span Hen
       div {{ nav.getCurrentUser().name }}
-  md-list
-    md-item(ng-repeat='item in nav.menu')
-      a
-        md-item-content(md-ink-ripple='', layout='row', layout-align='start center')
+  md-content
+    md-list
+      md-list-item(ng-repeat='item in nav.menu' md-ink-ripple='')    
+        md-item-content(layout='row', layout-align='start center')
           .inset
-            ng-md-icon(icon='{{item.icon}}')
+            i.material-icons {{item.icon}}
           .inset
-            | {{item.title}}
-    md-divider
-    md-subheader Management
-    md-item(ng-repeat='item in nav.admin')
-      a
-        md-item-content(md-ink-ripple='', layout='row', layout-align='start center')
+          | {{item.title}}
+  md-divider
+  md-content
+    md-list
+      md-list-item(ng-repeat='item in nav.admin' md-ink-ripple='')    
+        md-item-content(layout='row', layout-align='start center')
           .inset
-            ng-md-icon(icon='{{item.icon}}')
+            i.material-icons {{item.icon}}
           .inset
-            | {{item.title}}
+          | {{item.title}}
+          

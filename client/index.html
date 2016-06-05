@@ -10,6 +10,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
@@ -22,17 +23,17 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="ecomovaApp" layout="row">
+  <body ng-app="ecomovaApp" layout="row" >
     <!--[if lt IE 7]>
 
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <navbar layout="column" flex=20></navbar>
-    
-    <div layout="column" flex=80>
-      <div ui-view="" layout="row"></div>
+    <navbar layout="column" flex-gt-md=20 flex=0></navbar>
+
+    <div layout="column" flex-gt-md=80 flex=100>
+      <div ui-view="" layout="column" layout-fill layout-pading></div>
       <footer layout="row"></footer>
     </div>
 
@@ -76,16 +77,17 @@
       <script src="app/admin/admin.module.js"></script>
       <script src="components/auth/auth.module.js"></script>
       <script src="components/util/util.module.js"></script>
-      <script src="components/auth/interceptor.service.js"></script>
+      <script src="components/auth/auth.service.js"></script>
       <script src="app/admin/admin.controller.js"></script>
       <script src="app/account/account.js"></script>
       <script src="app/admin/admin.router.js"></script>
       <script src="app/app.constant.js"></script>
       <script src="app/main/main.controller.js"></script>
       <script src="app/main/main.js"></script>
+      <script src="app/toolbar/toolbar.directive.js"></script>
       <script src="app/account/settings/settings.controller.js"></script>
-      <script src="components/auth/auth.service.js"></script>
       <script src="app/account/login/login.controller.js"></script>
+      <script src="components/auth/interceptor.service.js"></script>
       <script src="components/auth/router.decorator.js"></script>
       <script src="components/auth/user.service.js"></script>
       <script src="components/footer/footer.directive.js"></script>
