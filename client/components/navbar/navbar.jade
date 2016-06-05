@@ -1,8 +1,7 @@
 md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-md')")
-  md-toolbar.md-tall
+  md-toolbar
     span(flex='')
-    .md-toolbar-tools-bottom.inset(layout='column')
-      md-icon.md-avatar(md-svg-icon="avatars:svg-1")
+    .md-toolbar-tools-bottom.inset(layout='column')      
       span Hen
       div {{ nav.getCurrentUser().name }}
   md-content

@@ -1,4 +1,4 @@
-md-toolbar.animate-show.md-tall.md-whiteframe-z1(ng-show='!showSearch')
+md-toolbar.animate-show.md-whiteframe-z1(ng-show='!showSearch')
   .md-toolbar-tools
     md-button.md-icon-button(ng-click="toggleSidenav('left')", hide-gt-md='', aria-label='Menu')
       i.material-icons menu
@@ -14,9 +14,7 @@ md-toolbar.animate-show.md-hue-1.md-whiteframe-z1(ng-show='showSearch')
     md-button.md-icon-button(ng-click='toggleSearch()', aria-label='Menu')
       i.material-icons arrow_back
     h3(role='button', ng-click='toggleSearch()')
-      | Back
-    span(flex='5')
-    span
+    span(flex='100')
       md-autocomplete(md-theme='input', md-input-name='autocompleteField', md-no-cache='ctrl.noCache', md-selected-item='ctrl.selectedItem', md-search-text='ctrl.searchText', md-items='item in ctrl.querySearch(ctrl.searchText)', md-item-text='item.display', placeholder='Search')
         md-item-template
           span(md-highlight-text='ctrl.searchText') {{item.display}}
