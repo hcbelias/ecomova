@@ -1,17 +1,20 @@
 md-toolbar.animate-show.md-whiteframe-z1(ng-show='!showSearch')
   .md-toolbar-tools
-    md-button.md-icon-button(ng-click="toggleSidenav('left')", hide-gt-md='', aria-label='Menu')
+    md-button.md-icon-button(ng-click="toggleSidenav('left')" hide-gt-md='' aria-label='Menu')
       i.material-icons menu
     h3
       | Ecomova
     span(flex='')
+    md-button.md-icon-button(aria-label='Search' ng-click='toggleSearch()' ng-show="nav.isLoggedIn()")
+      i.material-icons search
+    md-button.md-icon-button(aria-label='Help')
+      i.material-icons help
     md-button.md-icon-button(aria-label='Login' ng-hide="nav.isLoggedIn()")
       a(ui-sref='login')
-        i.material-icons account_box
-    md-button.md-icon-button(aria-label='Search', ng-click='toggleSearch()' ng-show="nav.isLoggedIn()")
-      i.material-icons search
-    md-button.md-icon-button(aria-label='Open Settings', ng-click='showListBottomSheet($event)')
-      i.material-icons help
+        i.material-icons account_circle  
+    md-button.md-icon-button(aria-label='Logout' ng-show="nav.isLoggedIn()")
+      a(ui-sref='logout')
+        i.material-icons exit_to_app
 md-toolbar.animate-show.md-hue-1.md-whiteframe-z1(ng-show='showSearch')
   .md-toolbar-tools
     md-button.md-icon-button(ng-click='toggleSearch()', aria-label='Menu')

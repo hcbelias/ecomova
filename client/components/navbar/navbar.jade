@@ -1,9 +1,9 @@
 md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-md')" ng-show="nav.isLoggedIn()")
   md-toolbar
     span(flex='')
-    .md-toolbar-tools-bottom.inset(layout='column')      
-      span Hen
-      div {{ nav.getCurrentUser().name }}
+    .md-toolbar-tools-bottom.inset(layout='column'  layout-align="center center")      
+      img.avatar-picture(src="{{ nav.currentUser.picture }}"  alt="{{nav.currentUser.picture}}") 
+      div {{ nav.currentUser.name }}
   md-content
     md-list
       md-list-item(ng-repeat='item in nav.menu' md-ink-ripple='')    

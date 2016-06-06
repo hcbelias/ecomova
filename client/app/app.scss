@@ -12,7 +12,11 @@ navbar{
   }
   md-sidenav{
     height: 100%;
-    
+    .avatar-picture{
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+    }
     i.material-icons{
       color: green;
     }

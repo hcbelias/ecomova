@@ -37,6 +37,7 @@ class NavbarController {
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
     this.$mdSidenav = $mdSidenav;
+    this.currentUser = Auth.getCurrentUser();
   }
 
 }
