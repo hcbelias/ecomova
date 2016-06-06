@@ -5,6 +5,7 @@ angular.module('ecomovaApp')
     $stateProvider
       .state('main', {
         url: '/',
-        template: '<main></main>'
+        template: '<main></main>',
+        authenticate: true
       });
   });

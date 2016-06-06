@@ -28,7 +28,7 @@ angular.module('ecomovaApp.auth')
           }
 
           event.preventDefault();
-          $state.go('main');
+          $state.go('login');
         });
       }
     });
