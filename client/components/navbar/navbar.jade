@@ -1,4 +1,4 @@
-md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-md')")
+md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-md')" ng-show="nav.isLoggedIn()")
   md-toolbar
     span(flex='')
     .md-toolbar-tools-bottom.inset(layout='column')      

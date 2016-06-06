@@ -48,6 +48,7 @@ navbar{
 
 // Component styles are injected through grunt
 /* inject:scss */
+@import 'account/login/login.scss';
 @import 'admin/admin.scss';
 @import 'main/main.scss';
 @import 'toolbar/toolbar.scss';

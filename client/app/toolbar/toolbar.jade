@@ -5,7 +5,10 @@ md-toolbar.animate-show.md-whiteframe-z1(ng-show='!showSearch')
     h3
       | Ecomova
     span(flex='')
-    md-button.md-icon-button(aria-label='Search', ng-click='toggleSearch()')
+    md-button.md-icon-button(aria-label='Login' ng-hide="nav.isLoggedIn()")
+      a(ui-sref='login')
+        i.material-icons account_box
+    md-button.md-icon-button(aria-label='Search', ng-click='toggleSearch()' ng-show="nav.isLoggedIn()")
       i.material-icons search
     md-button.md-icon-button(aria-label='Open Settings', ng-click='showListBottomSheet($event)')
       i.material-icons help

@@ -14,6 +14,8 @@ angular.module('ecomovaApp')
         scope.toggleSidenav = function(menuId) {
   //        $mdSidenav(menuId).toggle();
         };
+
+
       }
     };
   });
