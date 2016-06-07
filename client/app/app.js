@@ -1,7 +1,9 @@
 'use strict';
 
 var en_I18N = {
-  management: 'Management'
+  management: 'Management',
+  myapp: 'My App',
+  rides: 'Rides'
 };
 
 angular.module('ecomovaApp.I18N',[]);
@@ -18,9 +20,11 @@ angular.module('ecomovaApp', [
   'validation.match',
   'ngMaterial',
   'ngMessages',
-  'pascalprecht.translate'
+  'pascalprecht.translate',
+  'uiGmapgoogle-maps'
 ])
-  .config(function($urlRouterProvider, $locationProvider, $translateProvider, $mdThemingProvider) {
+  .config(function($urlRouterProvider, $locationProvider, $translateProvider, $mdThemingProvider, uiGmapGoogleMapApiProvider, appConfig) {
+
     $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(true);
@@ -29,5 +33,13 @@ angular.module('ecomovaApp', [
     $translateProvider.preferredLanguage('en');
 
     $mdThemingProvider.theme('default')
-      .primaryPalette('light-green');
+      .primaryPalette('indigo')
+      .accentPalette('green')
+      .warnPalette('red');
+
+    uiGmapGoogleMapApiProvider.configure({
+        key: appConfig.googleMapsAPIKey || 'AIzaSyD_tAZDpNLnmRWtGv1xBTquyFrrKj--HP0',
+        v: '3.20', //defaults to latest 3.X anyhow
+        libraries: 'weather,geometry,visualization'
+    });
   });

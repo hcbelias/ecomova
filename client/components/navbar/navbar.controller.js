@@ -5,7 +5,7 @@ class NavbarController {
   menu = [
     {
       link : '',
-      title: 'Carpool',
+      title: 'Rides',
       icon: 'dashboard'
     },
     {

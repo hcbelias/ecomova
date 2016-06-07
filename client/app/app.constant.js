@@ -3,7 +3,7 @@
 
 angular.module('ecomovaApp.constants', [])
 
-.constant('appConfig', {userRoles:['guest','user','admin']})
+.constant('appConfig', {userRoles:['guest','user','admin'],googleMapsAPIKey:'AIzaSyD_tAZDpNLnmRWtGv1xBTquyFrrKj--HP0'})
 
 ;
 })(angular);

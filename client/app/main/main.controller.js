@@ -4,14 +4,12 @@
 
 class MainController {
 
-  constructor($http, $scope, socket) {
+  constructor($http, $scope, socket, uiGmapGoogleMapApi) {
     this.$http = $http;
     this.socket = socket;
     this.awesomeThings = [];
-
-    $scope.$on('$destroy', function() {
-      socket.unsyncUpdates('thing');
-    });
+    this.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+    this.uiGmapGoogleMapApi = uiGmapGoogleMapApi;
   }
 
   $onInit() {
@@ -19,17 +17,10 @@ class MainController {
       this.awesomeThings = response.data;
       this.socket.syncUpdates('thing', this.awesomeThings);
     });
-  }
 
-  addThing() {
-    if (this.newThing) {
-      this.$http.post('/api/things', { name: this.newThing });
-      this.newThing = '';
-    }
-  }
-
-  deleteThing(thing) {
-    this.$http.delete('/api/things/' + thing._id);
+    this.uiGmapGoogleMapApi.then(function(maps) {
+      debugger;
+    });
   }
 }
 

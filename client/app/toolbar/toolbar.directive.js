@@ -11,12 +11,12 @@ angular.module('ecomovaApp')
         scope.showSearch = false;
         scope.isLoggedIn = auth.isLoggedIn;
         scope.mdSidenav = mdSidenav;
+        scope.title = attrs.title;
         scope.toggleSearch = function(element) {
           scope.showSearch = !scope.showSearch;
         };
 
         scope.toggleSidenav = function(menuId) {
-          debugger;
           scope.mdSidenav(menuId).toggle();
         };
 
