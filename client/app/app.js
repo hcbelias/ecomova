@@ -21,9 +21,9 @@ angular.module('ecomovaApp', [
   'ngMaterial',
   'ngMessages',
   'pascalprecht.translate',
-  'uiGmapgoogle-maps'
+  'ngMap'
 ])
-  .config(function($urlRouterProvider, $locationProvider, $translateProvider, $mdThemingProvider, uiGmapGoogleMapApiProvider, appConfig) {
+  .config(function($urlRouterProvider, $locationProvider, $translateProvider, $mdThemingProvider) {
 
     $urlRouterProvider.otherwise('/');
 
@@ -37,9 +37,6 @@ angular.module('ecomovaApp', [
       .accentPalette('green')
       .warnPalette('red');
 
-    uiGmapGoogleMapApiProvider.configure({
-        key: appConfig.googleMapsAPIKey || 'AIzaSyD_tAZDpNLnmRWtGv1xBTquyFrrKj--HP0',
-        v: '3.20', //defaults to latest 3.X anyhow
-        libraries: 'weather,geometry,visualization'
-    });
+
+
   });

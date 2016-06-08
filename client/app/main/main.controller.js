@@ -4,22 +4,18 @@
 
 class MainController {
 
-  constructor($http, $scope, socket, uiGmapGoogleMapApi) {
+  constructor($http, $scope, socket, NgMap, appConfig) {
     this.$http = $http;
     this.socket = socket;
     this.awesomeThings = [];
     this.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
-    this.uiGmapGoogleMapApi = uiGmapGoogleMapApi;
-  }
+    this.NgMap = NgMap;
+    this.googleMapsApiUrl = appConfig.googleMapsLink + appConfig.googleMapsAPIKey;
 
-  $onInit() {
-    this.$http.get('/api/things').then(response => {
-      this.awesomeThings = response.data;
-      this.socket.syncUpdates('thing', this.awesomeThings);
-    });
-
-    this.uiGmapGoogleMapApi.then(function(maps) {
-      debugger;
+    NgMap.getMap().then(function(map) {
+      console.log(map.getCenter());
+      console.log('markers', map.markers);
+      console.log('shapes', map.shapes);
     });
   }
 }

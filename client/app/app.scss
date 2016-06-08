@@ -1,37 +1,6 @@
 $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
 
-/**
- * App-wide Styles
- */
-
-navbar{
-  height: 100%;
-
-  md-sidenav{
-    height: 100%;
-    .avatar-picture{
-      border-radius: 50%;
-      height: 80px;
-      width: 80px;
-    }
-    & > md-toolbar {
-      padding: 15px; //material design concepts
-      .toolbar-subtitle{
-        height: 56px;//material design concepts
-      }
-    }
-    & md-list-item.md-2-line .md-list-item-text {
-      padding-top: 14px;
-      padding-bottom: 12px;
-    }
-    & md-divider {
-      margin-top: 4px;
-      margin-bottom: 4px;
-    }
-  }
-}
-
 
 /* fade animation */
 .animate-show {
@@ -51,8 +20,8 @@ navbar{
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
 @import 'main/main.scss';
-@import 'searchmap/searchmap.scss';
 @import 'toolbar/toolbar.scss';
 @import '../components/footer/footer.scss';
+@import '../components/navbar/navbar.scss';
 @import '../components/oauth-buttons/oauth-buttons.scss';
 /* endinject */
